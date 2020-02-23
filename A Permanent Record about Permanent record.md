@@ -1,4 +1,4 @@
-# A Permanent Record about Permanent record
+# A Permanent Record about Permanent Record
 
 
 >火山会推动这个世界，它创造岛屿、冷却地球，让土壤变的丰饶。它的岩浆不可抑制地流动，最终冷却、变硬。火山灰喷射到天空，洒落下来，变成矿物质，这会给土壤带来营养，创造出新生命。
