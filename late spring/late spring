@@ -1,0 +1,63 @@
+
+float a = 10;
+float b = 10;
+float aspeed = 13;
+float bspeed = 13;
+
+
+void setup() {
+  size(300, 400, OPENGL);
+  smooth(5);
+  background(225,80,80);
+  stroke(10);
+  fill(0);
+  for (int b=10; b <=height-10; b +=40) {
+    for(int a=10; a <=width-10; a +=40) {
+  ellipse(a, b,40,40);  
+  line(a,b,10,100);
+    }
+  }
+
+
+
+}
+
+
+void draw() {
+{  a = a + aspeed;
+  b = b + bspeed;
+  
+  if ((a > width) || (a < 0)) {
+    aspeed = aspeed * -1.01;
+  }
+  if ((b > height) || (b < 0)) {
+    bspeed = bspeed * -1;
+  }
+
+
+
+  stroke(225,66,60);
+  strokeWeight(55);
+  fill(4,2,3);
+  ellipse(a, b, 1,1);
+}
+  strokeWeight(-1);
+  stroke(230,13,113);
+  fill(200,2,13,44);
+  
+  for (int i=0;i<222;i=i+45){
+    int vertexCount = int(map(i,220,29,40,20));
+   mPolygon(width/2,height/4,vertexCount,i,i/10);
+  }
+}
+
+void mPolygon(int x, int y,int numOfVertex, int br, int rOff){
+  beginShape();
+  for (int i=0;i<numOfVertex;i++){
+    float pingPong = sin(radians(millis()/6.0+20*i));
+    float r = br+map(pingPong,-0.1,1,-rOff,rOff);
+    vertex(x+cos(radians(i*360/numOfVertex))*r,y+sin(radians(i*360/numOfVertex))*r);
+  }
+  endShape(CLOSE);
+  
+}
